@@ -1,7 +1,9 @@
 language: java
 jdk:
   - oraclejdk8
-script: mvn clean install -Pintegration-tests -Dmaven.javadoc.skip=true -B -V
+script:
+  - mvn install -f decembrist-jar-plugin/pom.xml
+  - mvn install -Pintegration-tests -Dmaven.javadoc.skip=true -B -V
 install:
   - wget http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.zip || travis_terminate 1;
     unzip -qq apache-maven-3.5.3-bin.zip || travis_terminate 1;

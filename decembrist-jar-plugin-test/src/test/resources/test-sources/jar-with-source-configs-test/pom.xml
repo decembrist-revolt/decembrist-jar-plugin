@@ -43,7 +43,7 @@
                     <sourceConfigs>
                         <config>
                             <directories>
-                                <directory>${build.directory}/test-classes</directory>
+                                <directory>${project.build.directory}/test-classes</directory>
                             </directories>
                             <includes>
                                 <include>**/*.class</include>
