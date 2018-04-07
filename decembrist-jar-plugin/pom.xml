@@ -6,61 +6,56 @@
 
     <groupId>org.decembrist</groupId>
     <artifactId>decembrist-jar-plugin</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0.9.0</version>
     <packaging>maven-plugin</packaging>
-    <name>org.jetbrains.kotlin:kotlin-stdlib</name>
-    <description>Kotlin Standard Library</description>
-    <url>https://decembrist.org/</url>
+
+    <name>Decembrist Jar Plugin</name>
+
+    <description>Plugin for creating java and kotlin(kotlin2js) jar</description>
+    <url>http://decembrist.org/</url>
+
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-    <developers>
-        <developer>
-            <name>Decembrist Team</name>
-            <organization>JetBrains</organization>
-            <organizationUrl>https://www.jetbrains.com</organizationUrl>
-        </developer>
-    </developers>
+
     <scm>
-        <connection>scm:git:https://github.com/JetBrains/kotlin.git</connection>
-        <developerConnection>scm:git:https://github.com/JetBrains/kotlin.git</developerConnection>
-        <url>https://github.com/JetBrains/kotlin</url>
+        <url>https://github.com/decembrist-revolt/decembrist-jar-plugin</url>
     </scm>
 
     <properties>
         <kotlin.version>1.2.31</kotlin.version>
         <maven.plugin.annotations.version>3.3</maven.plugin.annotations.version>
-        <aether.version>1.0.2.v20150114</aether.version>
-        <mojo.executor.version>2.2.0</mojo.executor.version>
-        <mockito.core>2.15.0</mockito.core>
-        <junit.jupiter.version>5.1.0</junit.jupiter.version>
-        <junit.platform.version>1.0.3</junit.platform.version>
         <kotlin.version>1.2.31</kotlin.version>
+        <maven.plugin.api>3.3.9</maven.plugin.api>
+        <maven.project>2.2.1</maven.project>
+        <maven.archiver>3.2.0</maven.archiver>
+        <plexus.archiver>3.5</plexus.archiver>
+        <maven.plugin.plugin>3.5.1</maven.plugin.plugin>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>3.3.9</version>
+            <version>${maven.plugin.api}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-project</artifactId>
-            <version>2.2.1</version>
+            <version>${maven.project}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-archiver</artifactId>
-            <version>3.2.0</version>
+            <version>${maven.archiver}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-archiver</artifactId>
-            <version>3.5</version>
+            <version>${plexus.archiver}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -97,12 +92,29 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <goalPrefix>decembrist</goalPrefix>
-                    <skipDescriptor>true</skipDescriptor>
-                </configuration>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
