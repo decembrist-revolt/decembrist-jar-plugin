@@ -159,21 +159,12 @@ class JarMojo : AbstractMojo() {
     @Parameter(defaultValue = "\${project.build.finalName}", readonly = true)
     private lateinit var finalName: String
 
-    /**
-     * The [{]
-     */
     @Parameter(defaultValue = "\${project}", readonly = true, required = true)
     private lateinit var project: MavenProject
 
-    /**
-     * The [MavenSession].
-     */
     @Parameter(defaultValue = "\${session}", readonly = true, required = true)
     private lateinit var session: MavenSession
 
-    /**
-     *
-     */
     @Component
     private lateinit var projectHelper: MavenProjectHelper
 
@@ -236,7 +227,7 @@ class JarMojo : AbstractMojo() {
 
     /**
      * Generates the JAR.
-     * @throws MojoExecutionException in case of an error.
+     * @throws [MojoExecutionException] in case of an error.
      */
     override fun execute() {
         assertParams()
