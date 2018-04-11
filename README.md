@@ -109,7 +109,7 @@ _target_ for both JVM and JS presents hardcoded source configs:
 </sourceConfigs>
 ```
 
-```One of _<target>_ or _<sourceConfigs>_ have to be specified```
+```One of <target> or <sourceConfigs> have to be specified```
 
 _Other available options:_
  - _jsDefaultKjsmDirectory_ - directory where are .kjsm files placed. Used only for JS - target. 
