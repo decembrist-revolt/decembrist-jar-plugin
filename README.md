@@ -3,7 +3,7 @@
 Flexible jar plugin for Maven 
 
 Plugin substitutes maven-jar-plugin to create jar for java, kotlin or kotlin2js
-You should specify _<target>_ in configuration block  
+You should specify _target_ in configuration block  
  - JVM
  - JS
 
@@ -18,7 +18,7 @@ You should specify _<target>_ in configuration block
     </configuration>
 </plugin>
 ```  
-You can ignore _<target>_ propery and specify sources for packing manually with _<sourceConfigs>_
+You can ignore _target_ propery and specify sources for packing manually with _sourceConfigs_
  - sourceConfigs - array of sources configs
  - directories - array of directories to include
  - includes - array of file patterns to include
@@ -48,8 +48,9 @@ Patterns examples
 ...
 ```
 
-You can combine your _<sourceConfigs>_ with _<target>_.
-_<target>_ for both JVM and JS presents hardcoded source configs:
+You can combine your _sourceConfigs_ with _target_.
+
+_target_ for both JVM and JS presents hardcoded source configs:
  - JVM  
 ```xml
 <sourceConfigs>
@@ -111,18 +112,18 @@ _<target>_ for both JVM and JS presents hardcoded source configs:
 ```One of _<target>_ or _<sourceConfigs>_ have to be specified```
 
 _Other available options:_
- - <jsDefaultKjsmDirectory> - directory where are .kjsm files placed. Used only for JS - target. 
+ - _jsDefaultKjsmDirectory_ - directory where are .kjsm files placed. Used only for JS - target. 
 Default:
 ```maven
     ${project.build.directory}/js/${project.name}
 ```
- - <outputDirectory> - directory containing the generated JAR
+ - _outputDirectory_ - directory containing the generated JAR
 Default:
 ```maven
     ${project.build.directory}
 ```
- - <skipNonExistingDirs> - If true - don't process non-existing sources (it can throw exception) Default: true
- - <classifier> - @see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
- - <archive> - @see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
- - <forceCreation> -@see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
- - <skipIfEmpty> - @see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
+ - _skipNonExistingDirs_ - If true - don't process non-existing sources (it can throw exception) Default: true
+ - _classifier_ - @see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
+ - _archive_ - @see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
+ - _forceCreation_ -@see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
+ - _skipIfEmpty_ - @see [maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/jar-mojo.html)
