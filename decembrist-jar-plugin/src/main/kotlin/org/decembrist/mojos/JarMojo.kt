@@ -208,7 +208,7 @@ class JarMojo : AbstractMojo() {
                         excludes = arrayOf(CLASS_FILES, JS_FILES)),
                 SourceConfig(
                         directories = arrayOf(jsDefaultKjsmDirectory.parentFile),
-                        includes = arrayOf(JS_FILES),
+                        includes = arrayOf(JS_FILES, JS_MAP_FILES),
                         excludes = arrayOf(KJSM_FILES, CLASS_FILES)),
                 SourceConfig(
                         directories = arrayOf(buildClasses),
@@ -357,6 +357,7 @@ class JarMojo : AbstractMojo() {
         const val TYPE = "jar"
         const val KJSM_FILES = "**/*.kjsm"
         const val JS_FILES = "**/*.js"
+        const val JS_MAP_FILES = "**/*.js.map"
         const val CLASS_FILES = "**/*.class"
         const val ANY_FILE = "**/**"
     }

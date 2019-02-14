@@ -13,10 +13,6 @@
     <artifactId>js-jar-with-source-configs-test</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <kotlin.version>1.2.31</kotlin.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -65,6 +61,11 @@
                         <goals>
                             <goal>js</goal>
                         </goals>
+                        <configuration>
+                            <sourceMap>true</sourceMap> <!-- source map is useful for debugging in tools that support source maps -->
+                            <sourceMapEmbedSources>always</sourceMapEmbedSources>
+                            <moduleKind>umd</moduleKind>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>test</id>

@@ -6,7 +6,7 @@
 
     <groupId>org.decembrist</groupId>
     <artifactId>decembrist-jar-plugin</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0.9.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>decembrist-jar-plugin</name>

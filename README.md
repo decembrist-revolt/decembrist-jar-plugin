@@ -88,6 +88,7 @@ _target_ for both JVM and JS presents hardcoded source configs:
         </directories>
         <includes>
             <include>**/*.js</include>
+            <include>**/*.js.map</include>
         </includes>
         <excludes>
             <exclude>**/*.kjsm</exclude>

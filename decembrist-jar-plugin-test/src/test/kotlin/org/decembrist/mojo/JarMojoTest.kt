@@ -44,6 +44,7 @@ class JarMojoTest {
                     buildDirectory(orgDecembrist, "testpackage", "testpackage".kjsm()))
             jar.checkFileExistence(currentProject!!.projectName.js())
             jar.checkFileExistence(currentProject!!.projectName.metaJs())
+            jar.checkFileExistence(currentProject!!.projectName.jsMap())
             jar.checkFileExistence(buildDirectory(META_INF_FOLDER, MANIFEST_MF_FILE))
             jar.checkFileNonExistence(buildDirectory(orgDecembrist, "SomeTest"))
             jar.checkFileNonExistence("testproperties.props")
@@ -67,6 +68,7 @@ class JarMojoTest {
                     buildDirectory(orgDecembrist, "testpackage", "testpackage".kjsm()))
             jar.checkFileExistence(currentProject!!.projectName.js())
             jar.checkFileExistence(currentProject!!.projectName.metaJs())
+            jar.checkFileExistence(currentProject!!.projectName.jsMap())
             jar.checkFileExistence(buildDirectory(META_INF_FOLDER, MANIFEST_MF_FILE))
             jar.checkFileNonExistence("testproperties.props")
         }
@@ -187,6 +189,8 @@ class JarMojoTest {
     private fun String.kjsm() = "$this$KJSM_EXT"
 
     private fun String.js() = "$this$JS_EXT"
+
+    private fun String.jsMap() = "$this$JS_EXT.map"
 
     private fun String.metaJs() = "$this$JS_EXT"
 
