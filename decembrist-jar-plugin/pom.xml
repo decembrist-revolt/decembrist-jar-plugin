@@ -6,7 +6,7 @@
 
     <groupId>org.decembrist</groupId>
     <artifactId>decembrist-jar-plugin</artifactId>
-    <version>0.9.2-SNAPSHOT</version>
+    <version>0.9.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>decembrist-jar-plugin</name>
@@ -50,15 +50,14 @@
     <properties>
         <kotlin.version>1.2.31</kotlin.version>
         <maven.plugin.annotations.version>3.3</maven.plugin.annotations.version>
+        <kotlin.version>1.2.31</kotlin.version>
         <maven.plugin.api>3.3.9</maven.plugin.api>
         <maven.project>2.2.1</maven.project>
         <maven.archiver>3.2.0</maven.archiver>
-        <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
         <plexus.archiver>3.5</plexus.archiver>
         <maven.plugin.plugin>3.5.1</maven.plugin.plugin>
-        <dokka.version>0.9.17</dokka.version>
+        <dokka.version>0.9.16</dokka.version>
         <nexus.staging.maven.plugin>1.6.8</nexus.staging.maven.plugin>
-        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
     </properties>
 
     <dependencies>
@@ -137,7 +136,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven.source.plugin.version}</version>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -163,7 +162,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven.gpg.plugin.version}</version>
+                        <version>1.6</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
